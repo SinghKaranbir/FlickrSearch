@@ -21,8 +21,13 @@ class FlickrRepository(private val flickrService: FlickrService, private val com
         val dataSourceFactory =
             FlickrDataSourceFactory(searchTag, compositeDisposable, flickrService)
 
+        val config = PagedList.Config.Builder()
+            .setPageSize(DEFAULT_PAGE_SIZE)
+            .setEnablePlaceholders(false)
+            .build()
+
         // Get the paged list
-        return LivePagedListBuilder(dataSourceFactory, DEFAULT_PAGE_SIZE).build()
+        return LivePagedListBuilder(dataSourceFactory, config).build()
     }
 
 
