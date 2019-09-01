@@ -11,7 +11,7 @@ import co.karanbir.flickrsearch.network.Photo
 import io.reactivex.disposables.CompositeDisposable
 
 class SearchPhotoViewModel : ViewModel() {
-    private val queryLiveData = MutableLiveData<String>()
+    val queryLiveData = MutableLiveData<String>()
     private val compositeDisposable = CompositeDisposable()
     private val flickrService = FlickrService.getService()
     private val flickrRepository: FlickrRepository

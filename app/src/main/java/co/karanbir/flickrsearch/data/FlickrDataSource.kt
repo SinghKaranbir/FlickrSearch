@@ -21,6 +21,8 @@ class FlickrDataSource(
             ).subscribe({
                 callback.onResult(it.photos.photo, null, 2)
             }, {
+                //TODO Add new Model so that we can send the failure case to the UI
+                //callback.onResult(Result(state=error), null, 2)
                 Log.e(TAG, "Error loading ${params.requestedLoadSize}")
             })
         )
@@ -35,6 +37,7 @@ class FlickrDataSource(
             ).subscribe({
                 callback.onResult(it.photos.photo, params.key + 1)
             }, {
+                //TODO Add new Model so that we can send the failure case to the UI
                 Log.e(TAG, "Error loading ${params.requestedLoadSize}")
             })
         )
@@ -49,6 +52,7 @@ class FlickrDataSource(
             ).subscribe({
                 callback.onResult(it.photos.photo, params.key - 1)
             }, {
+                //TODO Add new Model so that we can send the failure case to the UI
                 Log.e(TAG, "Error loading ${params.requestedLoadSize}")
             })
         )
