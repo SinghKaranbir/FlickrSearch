@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/et_search_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:imeOptions="actionSearch"
+        android:inputType="text"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_photos"
         android:layout_width="match_parent"
